@@ -2,13 +2,22 @@ var express = require('express');
 var methodOverride = require('method-override');
 var bodyParser = require('body-parser');
 var exphbs = require('express-handlebars');
+var db = require('./models');
 var app = express();
+var controller = require('./controllers/burger_controllers.js');
 var port = process.env.PORT || 3000;
 
+app.use(bodyParser.json());
+app.use(bodyParser.text());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
+app.use(express.static('public'))
 
-
-
-app.listen(port, ()=>{
-  console.log('served started on port', port);
+db.sequelize.sync().then(()=>{
+  controller(app, db);
+  app.listen(port, ()=>{
+    console.log('served started on port', port);
+  });
 });
