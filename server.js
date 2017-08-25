@@ -13,10 +13,14 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 app.use(express.static('public'))
 
 db.sequelize.sync().then(()=>{
   controller(app, db);
+  require('./routes/html_routes.js')(app, db);
   app.listen(port, ()=>{
     console.log('served started on port', port);
   });
