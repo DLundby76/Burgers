@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,10 +20,15 @@
   "homepage": "https://github.com/DLundby76/Burgers#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
     "express": "^4.15.4",
     "express-handlebars": "^3.0.0",
+    "gulp": "^3.9.1",
     "method-override": "^2.3.9",
     "mysql2": "^1.4.1",
     "sequelize": "^4.6.0"
+  },
+  "devDependencies": {
+    "gulp-sass": "^3.1.0"
   }
 }
