@@ -25,12 +25,14 @@ res.json(result);
 
 
 app.put('/burgers',(req, res)=>{
+  console.log("put called")
 db.burger.update(req.body,{
   where: {
     id:req.body.id
   }
 }).then((result)=>{
-res.json(result);
+
+    res.json(result);
   });
 });
 }
