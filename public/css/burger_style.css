@@ -7,8 +7,6 @@ body * {
   height: 1000px; }
 
   .devouredBurger{
-    float: right;
-    width: 300px;
     border: 1px solid blue;
     text-align: center;
 
@@ -16,8 +14,6 @@ body * {
 
   }
   .burger{
-    float: left;
-    width: 300px;
     border: 1px solid red;
     text-align: center;
 
